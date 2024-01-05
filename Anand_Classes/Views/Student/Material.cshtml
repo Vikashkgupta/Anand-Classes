@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "Study Material";
+    Layout = "~/Views/Shared/StudentMasterPage.cshtml";
+}
+
+@model List<Anand_Classes.Models.Table_Material>
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<style>
+
+    .gallery-title {
+        font-size: 36px;
+        color: #42B32F;
+        text-align: center;
+        font-weight: 500;
+        margin-bottom: 70px;
+    }
+
+        .gallery-title:after {
+            content: "";
+            position: absolute;
+            width: 7.5%;
+            left: 46.5%;
+            height: 45px;
+            border-bottom: 1px solid #5e5e5e;
+        }
+
+    .filter-button {
+        font-size: 18px;
+        border: 1px solid #42B32F;
+        border-radius: 5px;
+        text-align: center;
+        color: #42B32F;
+        margin-bottom: 30px;
+        margin: 30px;
+    }
+
+        .filter-button:hover {
+            font-size: 18px;
+            border: 1px solid #42B32F;
+            border-radius: 5px;
+            text-align: center;
+            color: #ffffff;
+            background-color: #42B32F;
+        }
+
+    .btn-default:active .filter-button:active {
+        background-color: #42B32F;
+        color: white;
+    }
+
+    .port-image {
+        width: 100%;
+    }
+
+    .gallery_product {
+        margin-bottom: 30px;
+    }
+</style>
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h1 class="gallery-title">Study Materials</h1>
+            </div>
+
+            <div align="center">
+                <button class="btn btn-default filter-button" data-filter="all">All</button>
+                <button class="btn btn-default filter-button" data-filter="6th">6th</button>
+                <button class="btn btn-default filter-button" data-filter="7th">7th</button>
+                <button class="btn btn-default filter-button" data-filter="8th">8th</button>
+                <button class="btn btn-default filter-button" data-filter="9th">9th</button>
+                <button class="btn btn-default filter-button" data-filter="10th">10th</button>
+                <button class="btn btn-default filter-button" data-filter="11th">11th</button>
+                <button class="btn btn-default filter-button" data-filter="12th">12th</button>
+                <button class="btn btn-default filter-button" data-filter="other">Others</button>
+            </div>
+            <br />
+                <div class="col-sm-2"></div>
+            <div class="col-sm-8 text-center">
+
+
+            <table class="table table-striped table-hover" border="1">
+                <tr>
+                    <th style="text-align:center;">Title</th>
+                    <th style="text-align:center;">Click to view</th>
+                </tr>
+
+                @foreach (var x in Model)
+                {
+
+                    <tr class="gallery_product filter @x.Filter">
+                        <td>@x.Title</td>
+                        <td><a href="~/Content/Material/@x.Image">Open</a></td>
+                    </tr>
+                    }
+
+
+                </table>
+
+         </div>
+                <div class="col-sm-2"></div>
+
+             
+
+
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $(document).ready(function () {
+
+        $(".filter-button").click(function () {
+            var value = $(this).attr('data-filter');
+
+            if (value == "all") {
+                //$('.filter').removeClass('hidden');
+                $('.filter').show('1000');
+            }
+            else {
+                //            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+                //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+                $(".filter").not('.' + value).hide('3000');
+                $('.filter').filter('.' + value).show('3000');
+
+            }
+        });
+
+        if ($(".filter-button").removeClass("active")) {
+            $(this).removeClass("active");
+        }
+        $(this).addClass("active");
+
+    });
+</script>

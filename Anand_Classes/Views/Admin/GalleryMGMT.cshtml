@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "GalleryMGMT";
+    Layout = "~/Views/Shared/AdminMasterPage.cshtml";
+}
+
+
+@model List<Anand_Classes.Models.Table_Gallery>
+
+<h1 class="text-center" style="text-shadow:2px 2px 1px gray;">Gallery Images</h1>
+<br />
+
+<div class="row">
+    <table class="table table-striped table-hover" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Image</th>
+            <th>Uploading Date</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.Title</td>
+                <td>
+                    <a href="~/content/Gallery/@x.Image">
+                        <img src="~/content/Gallery/@x.Image" height="100" width="100" style="border-radius:20%;" />
+                    </a>
+                </td>
+                <td>@x.Upload_Date</td>
+
+                <th><a href="/admin/Image_Delete?m=@x.Id"><span class="fa fa-trash text-danger text-center" style="font-size:20px;"></span></a></th>
+
+            </tr>
+        }
+    </table>
+</div>

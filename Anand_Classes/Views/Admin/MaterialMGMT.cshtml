@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "MaterialMGMT";
+    Layout = "~/Views/Shared/AdminMasterPage.cshtml";
+}
+
+
+
+<br />
+<br />
+<br />
+<br />
+
+<h1 class="text-center" style="text-shadow:2px 2px 1px gray;">Upload an Image or PDF</h1>
+<br />
+
+
+<form method="post" action="/Admin/MaterialMGMT" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 border">
+                <br />
+                <input name="Filter" class="form form-control" type="text" list="Filter" placeholder="Select Class" required />
+                <datalist id="Filter">
+                    <option>6th</option>
+                    <option>7th</option>
+                    <option>8th</option>
+                    <option>9th</option>
+                    <option>10th</option>
+                    <option>11th</option>
+                    <option>12th</option>
+                    <option>Other</option>
+                </datalist>
+
+                <br />
+                <input name="Title" type="text" placeholder="Subject, Chapter or Topic Name" required class="form form-control" />
+                <br />
+                <input name="Image" type="file" placeholder="Choose a PDF or Image" class="form form-control" required accept="image/*,application/pdf" />
+                <br />
+                <input type="submit" value="Upload" required class="form form-control w-25 float-right" style="background: #20b2aa;" />
+                <br />
+                <br />
+
+            </div>
+            <div class="col-sm-2"></div>
+
+        </div>
+    </div>
+</form> 

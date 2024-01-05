@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "RegistrationMGMT";
+    Layout = "~/Views/Shared/AdminMasterPage.cshtml";
+}
+
+
+
+@model List<Anand_Classes.Models.Table_Registration>
+
+<h1 class="text-center" style="text-shadow: 2px 2px 1px gray;">Student Registration Details</h1>
+<br />
+
+<div class="row">
+    <table class="table table-striped table-hover" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Profile Picture</th>
+            <th>Name</th>
+            <th>Father's Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Date of Birth</th>
+            <th>Mobile</th>
+            <th>Address</th>
+            <th>EDUCATION</th>
+            <th>Registration Date</th>
+
+            <th>Delete</th>
+            <th>Update</th>
+
+
+        </tr>
+        @foreach (var y in Model)
+        {
+            <tr>
+                <td><b>@y.Id</b></td>
+                <td>
+                    <a href="~/content/Profile_Image/@y.Profile">
+                        <img src="~/content/Profile_Image/@y.Profile" height="50" width="50" style="border-radius:50%;" />
+                    </a>
+                        </td>
+                <td>@y.Name</td>
+                <td>@y.Father_Name</td>
+                <td>@y.S_Email</td>
+                <td>@y.S_Password</td>
+                <td>@y.DOB</td>
+                <td>@y.Mobile</td>
+                <td>@y.Address</td>
+                <td>@y.Education</td>
+
+                <td>@y.Registration_Date</td>
+
+                <th><a href="/admin/Delete?m=@y.S_Email"><span class="fa fa-trash text-danger text-center" style="font-size:20px;"></span></a></th>
+                <th><a href="/admin/Update_Student_Data?U=@y.S_Email"><span class="fa-solid fa-pen-to-square text-danger text-center" style="font-size:20px;"></span></a></th>
+
+            </tr>
+        }
+    </table>
+</div>
+

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Anand_ClassesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Table_Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Message" Type="varchar" MaxLength="500" />
+    <Property Name="Contact_Date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Table_Feedback">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Message" Type="varchar" MaxLength="500" />
+    <Property Name="Feedback_Date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Table_Gallery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="Image" Type="varchar(max)" />
+    <Property Name="Upload_Date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Table_Material">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Filter" Type="varchar" MaxLength="50" />
+    <Property Name="Title" Type="varchar" MaxLength="100" />
+    <Property Name="Image" Type="varchar(max)" />
+    <Property Name="Upload_Date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Table_Registration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Father_Name" Type="varchar" MaxLength="50" />
+    <Property Name="S_Email" Type="varchar" MaxLength="50" />
+    <Property Name="S_Password" Type="varchar" MaxLength="50" />
+    <Property Name="DOB" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="100" />
+    <Property Name="Education" Type="varchar" MaxLength="50" />
+    <Property Name="Profile" Type="varchar(max)" />
+    <Property Name="Registration_Date" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Table_Teacher_Login">
+    <Key>
+      <PropertyRef Name="T_Email" />
+    </Key>
+    <Property Name="T_Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="T_Password" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="Anand_ClassesModelStoreContainer">
+    <EntitySet Name="Table_Contact" EntityType="Self.Table_Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Feedback" EntityType="Self.Table_Feedback" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Gallery" EntityType="Self.Table_Gallery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Material" EntityType="Self.Table_Material" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Registration" EntityType="Self.Table_Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table_Teacher_Login" EntityType="Self.Table_Teacher_Login" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

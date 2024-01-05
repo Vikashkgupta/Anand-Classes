@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Upload_Image";
+    Layout = "~/Views/Shared/HomeMasterPage.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+
+<h1 class="text-center" style="text-shadow:2px 2px 1px gray;">Upload a Photo</h1>
+<br />
+
+
+<form method="post" action="/Home/Upload_Image" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 border">
+                <br />
+                <input name="Title" type="text" placeholder="Image Title (Ex:Teacher's Day)" required class="form form-control" />
+                <br />
+                <input name="Image" type="file" placeholder="Choose a Photo" class="form form-control" required accept="image/*" />
+                <br />
+                <input type="submit" value="Upload" placeholder="Title" required class="form form-control w-25 float-right" style="background: #20b2aa;" />
+                <br />
+                <br />
+
+            </div>
+            <div class="col-sm-4"></div>
+
+        </div>
+    </div>
+</form> 

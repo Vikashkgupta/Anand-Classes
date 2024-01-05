@@ -1,0 +1,199 @@
+﻿<html lang="en">
+
+<head>
+
+    <title>@ViewBag.Title</title>
+     <link rel="stylesheet" href="~/Content/css/aos.css">
+ <link rel="stylesheet" href="~/Content/css/style.css">
+ <link rel="stylesheet" href="~/Content/css/hover-min.css">
+ <link rel="stylesheet" href="~/Content/css/icofont.min.css">
+ <link rel="stylesheet" href="~/Content/css/animate.min.css">
+ <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+ <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+ <link rel="stylesheet" href="~/Content/css/bootstrap-theme.min.css">
+ <link rel="stylesheet" href="~/Content/assets/vendor/icofont/icofont.min.css">
+
+ <link rel="stylesheet" href="~/Content/main.css">
+
+    <!-- Bootstrap Css -->
+    <link href="~/content/dash/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Bootstrap Css -->
+    <!-- Common Css -->
+    <link href="~/content/dash/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--// Common Css -->
+    <!-- Nav Css -->
+    <link rel="stylesheet" href="~/content/dash/css/style4.css">
+    <!--// Nav Css -->
+    <!--font awesome 4.0.3-->
+    <link href="~/content/dash/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Fontawesome Css -->
+    <link href="~/content/dash/css/fontawesome-all.css" rel="stylesheet" />
+
+    <!--// Fontawesome Css -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div style="color: red;" class="sidebar-header">
+                <h1>
+                    <a href="/Admin/Index"><i class="fa-solid fa-user"></i> ADMIN</a>
+                </h1>
+                <span><i class="fa-solid fa-user"></i></span>
+            </div>
+            <div class="profile-bg"></div>
+            <ul class="list-unstyled components">
+
+
+                <li class="active">
+                    <a style="background-color: pink; color: red;" href="/admin/index">
+                        <i class="fas fa-th-large"></i><b>Dashboard</b>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a style="background: lime; color: red;" href="/Admin/RegistrationMGMT">
+                        <i class="fa-solid fa-address-card"></i><b>Registration Management</b>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a style="background: #5871b0; color: red;" href="/Admin/GalleryMGMT">
+                        <i class="fa-solid fa-address-card"></i><b>Gallery Management</b>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a style="background: lightblue; color: red;" href="/Admin/Contactmgmt">
+                        <i class="fa-solid fa-address-book"></i><b>Contact Management</b>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    <a style="background: lightgreen; color: red;" href="/Admin/FeedbackMGMT">
+                        <i class="fa-solid fa-comments"></i><b>Feedback Management</b>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    <a style="background: lightyellow; color: red;" href="/Admin/MaterialMGMT">
+                        <i class="fa-solid fa-pen-nib"></i><b>Content Management</b>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    <a style="background: gray; color: red;" href="/Admin/Change_Password">
+                        <i class="fa-solid fa-key"></i><b>Change Password</b>
+                    </a>
+                </li>
+
+
+
+                <li>
+                    <a style="background: silver; color: red;" href="/admin/Logout">
+                        <i class="fa-solid fa-right-from-bracket"></i><b>Log Out</b>
+                    </a>
+                </li>
+
+
+
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+            <!-- top-bar -->
+            <nav class="navbar navbar-default mb-xl-5 mb-4">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+
+                    <!--// Search-from -->
+                    <ul class="top-icons-agileits-w3layouts float-right">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa-solid fa-user"></i>
+                            </a>
+                            <div class="dropdown-menu drop-3">
+                                <div class="profile d-flex mr-o">
+
+                                    <div class="profile-r align-self-center">
+                                        <h3 class="sub-title-w3-agileits">Vikash Kumar</h3>
+                                        <a href="mailto:vikash@gmail.com">vikash@gmail.com</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="dropdown-item mt-3">
+                                    <h4>
+                                        <i class="far fa-user mr-3"></i>My Profile
+                                    </h4>
+                                </a>
+
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="login.html">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!--// top-bar -->
+
+
+
+            <div class="container-fluid">
+
+                @RenderBody()
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright-w3layouts py-xl-3 py-2 mt-xl-5 mt-4 text-center sticky-down">
+                <p>
+                    © 2023 | ®️ All Rights Reserved | Design & Developed by Vikash Kumar Gupta |
+                    <a href="https://mtechnologies.org/">Anand Classes </a>
+                </p>
+            </div>
+            <!--// Copyright -->
+        </div>
+    </div>
+
+
+
+    <!-- Required common Js -->
+    <script src='~/content/dash/js/jquery-2.2.3.min.js'></script>
+    <!-- //Required common Js -->
+    <!-- Sidebar-nav Js -->
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+
+    <!-- Js for bootstrap working-->
+    <script src="~/content/dash/js/bootstrap.min.js"></script>
+    <!-- //Js for bootstrap working -->
+
+</body>
+
+</html>

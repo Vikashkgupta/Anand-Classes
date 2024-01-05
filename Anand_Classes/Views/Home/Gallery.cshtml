@@ -1,0 +1,152 @@
+﻿@{
+    ViewBag.Title = "Anand Classes | Gallery";
+    Layout = "~/Views/Shared/HomeMasterPage.cshtml";
+}
+@model List<Anand_Classes.Models.Table_Gallery>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    .gallery {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+        .gallery img {
+            border-radius: 5px;
+        }
+
+    .btn {
+        position: absolute;
+        right: 20;
+        top: 70;
+        z-index: 1;
+        background: #71cec9;
+    }
+</style>
+<br />
+<br />
+<br />
+<br />
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<!--####
+### How to add in your boostrap project
+1) Add jQuery "<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>"
+2) Download fancybox (https://github.com/fancyapps/fancyBox)
+3) Or use CDN (http://cdnjs.com/libraries/fancybox)
+####--!>
+
+<!-- References: https://github.com/fancyapps/fancyBox -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+<!-- upload button -->
+<a href="/Home/Upload_Image"><button class="btn"><i class="fa-solid fa fa-plus fa-fade"></i></button></a>
+
+
+<div class="container">
+    <div class="row">
+        <div class='list-group gallery'>
+
+            <br />
+
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="~/Content/images/gallery1.jpeg">
+                    <img class="img-responsive" alt="" src="~/Content/images/gallery1.jpeg" />
+                    <div class='text-center'>
+                        <small class='text-muted'>Anand Sir</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+
+
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="~/Content/images/gallery2.jpeg">
+                    <img class="img-responsive" alt="" src="~/Content/images/gallery2.jpeg" />
+                    <div class='text-center'>
+                        <small class='text-muted'>Image Title</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+
+
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="~/Content/images/gallery3.jpeg">
+                    <img class="img-responsive" alt="" src="~/Content/images/gallery3.jpeg" />
+                    <div class='text-center'>
+                        <small class='text-muted'>Image Title</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+
+
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="~/Content/images/gallery4.jpeg">
+                    <img class="img-responsive" alt="" src="~/Content/images/gallery4.jpeg" />
+                    <div class='text-center'>
+                        <small class='text-muted'>Image Title</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="~/Content/images/gallery5.jpeg">
+                    <img class="img-responsive" alt="" src="~/Content/images/gallery5.jpeg" />
+                    <div class='text-center'>
+                        <small class='text-muted'>Image Title</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+
+
+
+
+
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="~/Content/images/gallery6.jpg">
+                    <img class="img-responsive" alt="" src="~/Content/images/gallery6.jpg" />
+                    <div class='text-center'>
+                        <small class='text-muted'>Image Title</small>
+                    </div> <!-- text-right / end -->
+                </a>
+            </div> <!-- col-6 / end -->
+
+            @foreach (var x in Model)
+            {
+
+
+                <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                    <a class="thumbnail fancybox" rel="ligthbox" href="~/Content/Gallery/@x.Image">
+                        <img class="img-responsive" alt="" src="~/Content/Gallery/@x.Image" />
+                        <div class='text-center'>
+                            <small class='text-muted'>@x.Title</small>
+                        </div> <!-- text-right / end -->
+                    </a>
+                </div> <!-- col-6 / end -->
+            }
+
+
+
+
+
+        </div> <!-- list-group / end -->
+    </div> <!-- row / end -->
+</div> <!-- container / end -->
+
+
+<script>
+
+
+    $(document).ready(function () {
+        //FANCYBOX
+        //https://github.com/fancyapps/fancyBox
+        $(".fancybox").fancybox({
+            openEffect: "none",
+            closeEffect: "none"
+        });
+    });
+
+</script>

@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "FeedbackMGMT";
+    Layout = "~/Views/Shared/AdminMasterPage.cshtml";
+}
+
+
+@model List<Anand_Classes.Models.Table_Feedback>
+
+<h1 class="text-center" style="text-shadow:2px 2px 1px gray;">Feedback Details</h1>
+<br />
+
+<div class="row">
+    <table class="table table-striped table-hover" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Feedback</th>
+            <th>Feedback Date</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Id</td>
+                <td>@x.Name</td>
+                <td>@x.Email</td>
+                <td>@x.Message</td>
+                <td>@x.Feedback_Date</td>
+            </tr>
+        }
+    </table>
+</div>
